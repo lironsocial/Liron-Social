@@ -1,0 +1,10 @@
+/* Webfonts. NOTE: no font binaries were provided with the brand, so these are
+   Google Fonts substitutions chosen to match the palette's warm editorial feel.
+   Swap the @import for local @font-face rules once real files exist. */
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..500&family=DM+Mono:wght@400;500&display=swap");
+
+:root{
+  --font-display:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --font-sans:"DM Sans","Helvetica Neue",Helvetica,sans-serif;
+  --font-mono:"DM Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liron Social | UGC &amp; Social Media</title>
+<meta name="description" content="לירון סושיאל – יצירת תוכן UGC וניהול סושיאל לעסקים ומותגים">
+<meta property="og:title" content="Liron Social">
+<meta property="og:description" content="UGC | Creative | Social Media Management">
+<meta property="og:image" content="assets/logo.png">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/design-system-d835446e-7fd3-4583-a7b9-948cf4c83404/styles.css">
+  <link rel="stylesheet" href="_ds/design-system-d835446e-7fd3-4583-a7b9-948cf4c83404/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/design-system-d835446e-7fd3-4583-a7b9-948cf4c83404/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/design-system-d835446e-7fd3-4583-a7b9-948cf4c83404/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/design-system-d835446e-7fd3-4583-a7b9-948cf4c83404/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/design-system-d835446e-7fd3-4583-a7b9-948cf4c83404/tokens/radii.css">
+  <link rel="stylesheet" href="_ds/design-system-d835446e-7fd3-4583-a7b9-948cf4c83404/tokens/shadows.css">
+  <link rel="stylesheet" href="_ds/design-system-d835446e-7fd3-4583-a7b9-948cf4c83404/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/design-system-d835446e-7fd3-4583-a7b9-948cf4c83404/tokens/base.css">
+  <link rel="stylesheet" href="_ds/design-system-d835446e-7fd3-4583-a7b9-948cf4c83404/components/components.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&display=swap">
+  <script src="https://unpkg.com/lucide@0.544.0/dist/umd/lucide.js"></script>
+  <script src="_ds/design-system-d835446e-7fd3-4583-a7b9-948cf4c83404/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    html,body{margin:0;background:#f7f5f0;}
+    body{font-family:"Assistant","DM Sans",sans-serif;color:#4a2b30;-webkit-font-smoothing:antialiased;}
+    a{color:#d0302f;text-decoration:none;}
+    a:hover{color:#6f0f18;}
+    :root{--font-sans:"DM Sans","Assistant",sans-serif;}
+    ::selection{background:#e64243;color:#fbd9e3;}
+    .ls-spin{position:relative;transform-style:preserve-3d;animation:lsSpin 7s ease-in-out infinite alternate;}
+    .ls-spin img{width:100%;height:auto;display:block;}
+    .ls-layer{position:absolute;inset:0;filter:brightness(.5) saturate(1.2);}
+    .ls-face,.ls-back{backface-visibility:hidden;-webkit-backface-visibility:hidden;}
+    @keyframes lsSpin{from{transform:rotateX(5deg) rotateY(-28deg)}to{transform:rotateX(5deg) rotateY(28deg)}}
+    @media (prefers-reduced-motion:reduce){.ls-spin{animation:none}}
+    @media (max-width:900px){.ph-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;}}
+    @media (max-width:700px){
+      .hdr{gap:10px !important;padding:0 14px !important;}
+      .nav-btn{font-size:14px !important;padding:6px 9px !important;}
+      .faq-list{grid-column:auto !important;}
+      .ph-grid{gap:16px 10px !important;padding-left:12px !important;padding-right:12px !important;}
+      .ph-cap{font-size:11px !important;margin-top:6px !important;}
+      .filter-btn{height:34px !important;padding:0 13px !important;font-size:14px !important;}
+      .ph-bezel{padding:4px !important;border-radius:20px !important;}
+      .ph-screen{border-radius:16px !important;}
+      .ph-notch{top:5px !important;height:9px !important;}
+      .ph-remove{top:18px !important;left:6px !important;width:24px !important;height:24px !important;}
+      .ph-remove svg{width:12px;height:12px;}
+      .ph-play{width:38px !important;height:38px !important;}
+      .ph-play svg{width:16px;height:16px;}
+      .ph-ctrl{left:4px !important;right:4px !important;bottom:6px !important;padding:3px !important;gap:4px !important;}
+      .ph-ctrl .ph-skip{display:none !important;}
+      .ph-ctrl > button{width:22px !important;height:22px !important;}
+      .ph-empty{inset:6px !important;border-radius:12px !important;padding:6px !important;gap:6px !important;}
+      .ph-empty-icon{width:30px !important;height:30px !important;border-radius:9px !important;}
+      .ph-empty-icon svg{width:14px;height:14px;}
+      .ph-empty-title{font-size:11px !important;}
+      .ph-empty-sub,.ph-empty-path{display:none !important;}
+    }
+    @media (max-width:700px){
+      .about-grid{grid-template-columns:minmax(0,1fr) !important;gap:16px !important;align-items:start !important;}
+      .about-photo{justify-self:stretch !important;margin-top:8px;}
+      .about-photo > div:first-child{transform:translate(6px,6px) rotate(3deg) !important;}
+      .about-badge{font-size:12px !important;padding:5px 9px !important;bottom:-12px !important;right:-4px !important;}
+      .about-h2{gap:6px !important;}
+      .about-h2 span{font-size:1.7rem !important;}
+      .about-name{margin:18px 0 12px !important;}
+      .about-name span{font-size:1.4rem !important;padding:4px 14px 6px !important;}
+      .about-grid p{font-size:1rem !important;line-height:1.6 !important;}
+    }
+  </style>
+</helmet>
+
+<div dir="rtl" style="min-height:100vh;background:#f7f5f0;font-family:'Assistant','DM Sans',sans-serif;color:#4a2b30;overflow-x:hidden;">
+
+  <header style="position:sticky;top:0;z-index:20;background:rgba(247,245,240,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1.5px solid #6f0f18;">
+    <div class="hdr" style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,64px);height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <button onClick="{{ goCover }}" style="all:unset;cursor:pointer;display:flex;align-items:center;flex:none;transition:transform 180ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:rotate(-4deg) scale(1.04);">
+        <img src="assets/logo.png" alt="Liron Social" style="height:44px;width:auto;display:block;">
+      </button>
+      <nav dir="rtl" style="display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;min-width:0;">
+        <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
+          <button class="nav-btn" onClick="{{ n.go }}" style="all:unset;cursor:pointer;padding:8px 14px;border-radius:999px;white-space:nowrap;font-family:'Assistant',sans-serif;font-size:16px;font-weight:700;color:{{ n.color }};background:{{ n.bg }};transition:all 120ms cubic-bezier(.22,.61,.36,1);" style-hover="color:#6f0f18;background:#fbd9e3;">{{ n.label }}</button>
+        </sc-for>
+      </nav>
+    </div>
+  </header>
+
+  <main ref="{{ mainRef }}">
+
+    <!-- 01 COVER -->
+    <section id="cover" data-screen-label="01 Cover" style="background:#f7f5f0;padding:clamp(12px,2vw,24px);">
+      <div dir="ltr" style="position:relative;min-height:calc(100vh - 68px - 2 * clamp(12px,2vw,24px));border:1.5px solid #6f0f18;border-radius:28px;display:grid;grid-template-rows:1fr auto;padding:clamp(20px,3.5vw,44px);box-sizing:border-box;">
+
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(24px,5vw,56px) 0;">
+          <div style="perspective:1200px;margin-bottom:clamp(28px,4vw,48px);">
+            <div class="ls-spin" style="width:clamp(200px,26vw,340px);">
+              <img class="ls-face" src="assets/logo.png" alt="Liron Social logo" style="position:relative;transform:translateZ(7px);">
+              <img class="ls-layer" src="assets/logo.png" alt="" aria-hidden="true" style="transform:translateZ(5px);">
+              <img class="ls-layer" src="assets/logo.png" alt="" aria-hidden="true" style="transform:translateZ(3.5px);">
+              <img class="ls-layer" src="assets/logo.png" alt="" aria-hidden="true" style="transform:translateZ(2px);">
+              <img class="ls-layer" src="assets/logo.png" alt="" aria-hidden="true" style="transform:translateZ(0.5px);">
+              <img class="ls-layer" src="assets/logo.png" alt="" aria-hidden="true" style="transform:translateZ(-1px);">
+              <img class="ls-layer" src="assets/logo.png" alt="" aria-hidden="true" style="transform:translateZ(-2.5px);">
+              <img class="ls-layer" src="assets/logo.png" alt="" aria-hidden="true" style="transform:translateZ(-4px);">
+              <img class="ls-layer" src="assets/logo.png" alt="" aria-hidden="true" style="transform:translateZ(-5.5px);">
+            </div>
+          </div>
+          <h1 style="margin:0;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:0 .22em;line-height:.9;">
+            <span style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(3.6rem,12vw,10rem);letter-spacing:-.05em;color:#6f0f18;">LIRON</span>
+            <span style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(4rem,13.5vw,11.25rem);letter-spacing:-.03em;color:#e64243;">SOCIAL</span>
+          </h1>
+          <div style="margin-top:clamp(8px,1.2vw,16px);display:inline-flex;align-items:center;color:#6f0f18;font-family:'DM Sans',sans-serif;font-weight:500;font-size:clamp(10px,1.6vw,16px);letter-spacing:.06em;white-space:nowrap;max-width:100%;box-sizing:border-box;text-transform:uppercase;">UGC | Creative | Social Media Management</div>
+        </div>
+
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+          <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(1.7rem,4.6vw,3.8rem);line-height:1.08;letter-spacing:-.035em;color:#6f0f18;display:flex;flex-direction:column;gap:clamp(8px,1vw,14px);">
+            <span style="display:flex;align-items:center;gap:.28em;flex-wrap:wrap;">YOUR <span style="color:#e64243;">BRAND,</span></span>
+            <span style="display:flex;align-items:center;gap:.28em;flex-wrap:wrap;">MY <span style="color:#e64243;">CREATIVE</span> <span>MIND<span style="color:#e64243;">.</span></span></span>
+          </div>
+          <div dir="rtl" style="display:flex;gap:16px;flex-wrap:wrap;padding-bottom:8px;">
+            <button onClick="{{ goProjects }}" style="all:unset;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;height:50px;padding:0 26px;border-radius:999px;background:#6f0f18;color:#fbd9e3;font-family:'Assistant',sans-serif;font-weight:700;font-size:17px;box-shadow:0 7px 16px -3px rgba(0,0,0,0.2);transition:all 120ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-2px,-2px);box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);" style-active="transform:translate(3px,4px);box-shadow:0 1px 4px -1px rgba(0,0,0,0.16);">לצפייה בעבודות</button>
+            <button onClick="{{ goAbout }}" style="all:unset;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;height:50px;padding:0 26px;border-radius:14px;background:#e64243;color:#6f0f18;font-family:'Assistant',sans-serif;font-weight:700;font-size:17px;box-shadow:0 7px 16px -3px rgba(0,0,0,0.2);transition:all 120ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-2px,-2px);box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);" style-active="transform:translate(3px,4px);box-shadow:0 1px 4px -1px rgba(0,0,0,0.16);">היכרות</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 ABOUT -->
+    <section id="about" data-screen-label="02 About" style="max-width:1180px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,4vw,64px);">
+      <div class="about-grid" data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(56px,7vw,96px);align-items:center;">
+        <div class="about-photo" style="display:none;position:relative;max-width:420px;width:100%;justify-self:center;">
+          <div style="position:absolute;inset:0;transform:translate(16px,16px) rotate(3deg);background:#e64243;border-radius:999px 999px 22px 22px;"></div>
+          <div style="position:relative;aspect-ratio:4/5;border-radius:999px 999px 22px 22px;overflow:hidden;background:#fbd9e3;border:1.5px solid #6f0f18;transform:rotate(-1.5deg);">
+            <image-slot id="about-photo" shape="rect" placeholder="תמונה אישית שלי"></image-slot>
+          </div>
+          <div class="about-badge" dir="ltr" style="position:absolute;bottom:-18px;right:-8px;background:#6f0f18;color:#fbd9e3;border-radius:999px;padding:10px 20px;box-shadow:0 7px 16px -3px rgba(0,0,0,0.2);transform:rotate(-4deg);font-family:'Instrument Serif',serif;font-style:italic;font-size:22px;line-height:1;">@liron.sayag</div>
+        </div>
+
+        <div>
+          <h2 class="about-h2" dir="ltr" style="margin:0;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:10px;line-height:.95;">
+            <span style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(2.8rem,6vw,5rem);letter-spacing:-.045em;color:#6f0f18;">LET'S GET</span>
+            <span style="display:inline-block;background:#6f0f18;color:#fbd9e3;border-radius:999px;padding:.04em .45em .12em;box-shadow:0 .08em .22em -.04em rgba(0,0,0,.22);transform:rotate(-2.5deg);font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(3rem,6.5vw,5.4rem);letter-spacing:-.02em;">TO KNOW</span>
+          </h2>
+          <div class="about-name" style="margin:clamp(40px,5vw,56px) 0 24px;">
+            <span style="display:inline-block;background:#e64243;color:#6f0f18;border-radius:14px;padding:6px 22px 10px;box-shadow:0 8px 19px -4px rgba(0,0,0,0.2);transform:rotate(-3deg);font-family:'Assistant',sans-serif;font-weight:800;font-size:clamp(2rem,3.8vw,2.9rem);line-height:1.1;">אני לירון</span>
+          </div>
+          <p style="margin:0 0 16px;font-size:1.1875rem;line-height:1.7;color:#4a2b30;max-width:52ch;text-wrap:pretty;">אני אוהבת ליצור, לקחת רעיון ולהפוך אותו לתוכן יצירתי, מקורי ומושך את העין.</p>
+          <p style="margin:0;font-size:1.1875rem;line-height:1.7;color:#4a2b30;max-width:52ch;text-wrap:pretty;">בעזרת הידע והיצירתיות שלי, אני רוצה לעזור לעסקים ומותגים ליצור נוכחות דיגיטלית בולטת, יצירתית ושמרגישה באמת אותנטית וכזאת שאנשים יכולים להתחבר אליה וש<strong style="font-weight:800;color:#6f0f18;background:linear-gradient(transparent 58%,#fbd9e3 58%);">מביאה למכירות!</strong></p>
+          <div style="margin-top:40px;">
+            <button onClick="{{ goServices }}" style="all:unset;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;height:50px;padding:0 26px;border-radius:999px;background:#6f0f18;color:#fbd9e3;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;letter-spacing:.02em;box-shadow:0 7px 16px -3px rgba(0,0,0,0.2);transition:all 120ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-2px,-2px);box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);" style-active="transform:translate(3px,4px);box-shadow:0 1px 4px -1px rgba(0,0,0,0.16);">WHAT I DO</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 WHAT I DO -->
+    <section id="services" data-screen-label="03 What I do" style="max-width:1180px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(20px,4vw,64px);">
+      <h2 dir="ltr" data-reveal="1" style="margin:0 0 clamp(44px,6vw,64px);display:flex;justify-content:flex-end;align-items:center;gap:.25em;flex-wrap:wrap;line-height:1;">
+        <span style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(2.8rem,6vw,5rem);letter-spacing:-.045em;color:#6f0f18;">WHAT</span>
+        <span style="display:inline-block;background:#e64243;color:#6f0f18;border-radius:.2em;padding:.02em .32em .1em;box-shadow:0 .08em .22em -.04em rgba(0,0,0,.22);transform:rotate(-3deg);font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(3rem,6.5vw,5.4rem);letter-spacing:-.02em;">I DO</span>
+      </h2>
+
+      <div data-reveal="1" style="max-width:880px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(18px,2.4vw,28px);align-items:stretch;">
+        <article style="background:#ffffff;border:1.5px solid #6f0f18;border-radius:20px;box-shadow:0 13px 29px -5px rgba(0,0,0,0.2);display:flex;flex-direction:column;">
+          <div style="padding:clamp(18px,2vw,24px);display:flex;flex-direction:column;gap:10px;flex:1;">
+            <div style="display:flex;align-items:center;gap:16px;">
+              <span style="width:48px;height:48px;flex:none;border-radius:12px;background:#e64243;color:#6f0f18;box-shadow:0 6px 13px -2px rgba(0,0,0,0.2);transform:rotate(-5deg);display:flex;align-items:center;justify-content:center;"><x-import component-from-global-scope="DesignSystem_d83544.Icon" name="clapperboard" size="{{ 26 }}" hint-size="26px,26px"></x-import></span>
+              <h3 style="margin:0;font-family:'Assistant',sans-serif;font-weight:800;font-size:clamp(1.55rem,2.4vw,1.95rem);line-height:1.1;color:#6f0f18;">יצירת תוכן UGC</h3>
+            </div>
+            <p style="margin:0;font-family:'Instrument Serif','Assistant',serif;font-style:italic;font-size:1.25rem;color:#d0302f;">תוכן שמיוצר על ידי המשתמש.</p>
+            <div style="height:1.5px;background:#fbd9e3;"></div>
+            <p style="margin:0;font-size:1.0625rem;line-height:1.65;text-wrap:pretty;">תוכן אותנטי, אמין ומדויק שמותאם אישית אליך ומספר את הסיפור של המותג שלך.</p>
+            <p style="margin:0;font-size:1.0625rem;line-height:1.65;text-wrap:pretty;">התוכן משמש לקידום אורגני וממומן בכל הפלטפורמות.</p>
+            <p style="margin:6px 0 0;font-size:1.0625rem;line-height:1.65;font-weight:700;color:#6f0f18;">השירות כולל:</p>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:10px 20px;">
+              <sc-for list="{{ ugcItems }}" as="s" hint-placeholder-count="6">
+                <li style="display:flex;align-items:center;gap:10px;font-size:1.0625rem;line-height:1.4;">
+                  <span style="width:24px;height:24px;flex:none;border-radius:7px;background:#e64243;color:#6f0f18;box-shadow:0 3px 6px -1px rgba(0,0,0,0.16);display:flex;align-items:center;justify-content:center;">
+                    <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="check" size="{{ 14 }}" hint-size="14px,14px"></x-import>
+                  </span>{{ s }}
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+        </article>
+
+        <article style="background:#6f0f18;color:#f7f5f0;border-radius:20px;box-shadow:0 13px 29px -5px rgba(0,0,0,0.2);display:flex;flex-direction:column;">
+          <div style="padding:clamp(18px,2vw,24px);display:flex;flex-direction:column;gap:10px;flex:1;">
+            <div style="display:flex;align-items:center;gap:16px;">
+              <span style="width:48px;height:48px;flex:none;border-radius:999px;background:#fbd9e3;color:#6f0f18;box-shadow:0 6px 13px -2px rgba(0,0,0,0.2);transform:rotate(5deg);display:flex;align-items:center;justify-content:center;"><x-import component-from-global-scope="DesignSystem_d83544.Icon" name="share-2" size="{{ 26 }}" hint-size="26px,26px"></x-import></span>
+              <h3 style="margin:0;font-family:'Assistant',sans-serif;font-weight:800;font-size:clamp(1.55rem,2.4vw,1.95rem);line-height:1.1;color:#fbd9e3;">ניהול סושיאל שוטף</h3>
+            </div>
+            <p dir="ltr" style="margin:0;text-align:right;font-family:'Instrument Serif',serif;font-style:italic;font-size:1.25rem;color:#f28a89;">Instagram · TikTok · Facebook</p>
+            <div style="height:1.5px;background:rgba(251,217,227,.22);"></div>
+            <p style="margin:0;font-size:1.0625rem;line-height:1.65;text-wrap:pretty;">ניהול סושיאל שוטף בכל הפלטפורמות – אינסטגרם, טיקטוק ופייסבוק.</p>
+            <p style="margin:6px 0 0;font-size:1.0625rem;font-weight:700;color:#fbd9e3;">השירות כולל:</p>
+            <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:10px 20px;">
+              <sc-for list="{{ socialItems }}" as="s" hint-placeholder-count="6">
+                <li style="display:flex;align-items:center;gap:10px;font-size:1.0625rem;line-height:1.4;">
+                  <span style="width:24px;height:24px;flex:none;border-radius:999px;background:#fbd9e3;color:#6f0f18;box-shadow:0 3px 6px -1px rgba(0,0,0,0.16);display:flex;align-items:center;justify-content:center;">
+                    <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="check" size="{{ 14 }}" hint-size="14px,14px"></x-import>
+                  </span>{{ s }}
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div style="margin-top:56px;display:flex;justify-content:center;">
+        <button onClick="{{ goProjects }}" style="all:unset;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;height:50px;padding:0 26px;border-radius:999px;background:#6f0f18;color:#fbd9e3;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;letter-spacing:.02em;box-shadow:0 7px 16px -3px rgba(0,0,0,0.2);transition:all 120ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-2px,-2px);box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);" style-active="transform:translate(3px,4px);box-shadow:0 1px 4px -1px rgba(0,0,0,0.16);">TAKE A LOOK AT MY PROJECTS</button>
+      </div>
+    </section>
+
+    <!-- 04 PROJECTS -->
+    <section id="projects" data-screen-label="04 Projects" style="padding:clamp(48px,8vw,96px) 0 clamp(48px,6vw,72px);">
+      <div data-reveal="1" style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,64px);">
+        <h2 dir="ltr" style="margin:0;display:flex;flex-direction:column;align-items:flex-end;gap:12px;line-height:.95;">
+          <span style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(2.8rem,6.5vw,5.4rem);letter-spacing:-.045em;color:#6f0f18;">TAKE A LOOK</span>
+          <span style="display:inline-block;background:#6f0f18;color:#fbd9e3;border-radius:999px;padding:.04em .45em .12em;box-shadow:0 .08em .22em -.04em rgba(0,0,0,.22);transform:rotate(-2deg);font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(2.8rem,6.5vw,5.4rem);letter-spacing:-.02em;">AT MY PROJECTS</span>
+        </h2>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(36px,5vw,52px);">
+          <sc-for list="{{ filters }}" as="f" hint-placeholder-count="6">
+            <button class="filter-btn" onClick="{{ f.pick }}" aria-pressed="{{ f.pressed }}" style="all:unset;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;height:42px;padding:0 20px;border-radius:999px;border:1.5px solid #6f0f18;background:{{ f.bg }};font-size:16px;font-weight:700;color:{{ f.fg }};box-shadow:0 4px 10px -2px rgba(0,0,0,0.2);transition:all 120ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-2px,-2px);box-shadow:0 7px 16px -3px rgba(0,0,0,0.2);" style-active="transform:translate(2px,2px);box-shadow:0 1px 4px -1px rgba(0,0,0,0.16);">{{ f.title }}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div class="ph-grid" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,3vw,44px) clamp(12px,2.4vw,36px);max-width:1180px;margin:0 auto;box-sizing:border-box;padding:clamp(36px,5vw,56px) clamp(20px,4vw,64px) 48px;align-items:start;">
+            <sc-for list="{{ phones }}" as="p" hint-placeholder-count="12">
+              <figure style="margin:0;min-width:0;transform:rotate({{ p.rot }});transition:transform 320ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateY(-6px);">
+                <div class="ph-bezel" style="padding:9px;border-radius:44px;background:#2a1418;box-shadow:{{ p.shadow }};">
+                  <div class="ph-screen" data-screen="1" onDragOver="{{ p.onDragOver }}" onDrop="{{ p.onDrop }}" onClick="{{ p.onClick }}" style="position:relative;aspect-ratio:9/16;border-radius:35px;overflow:hidden;background:#fbd9e3;cursor:pointer;">
+                    <div class="ph-notch" style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:30%;height:22px;border-radius:999px;background:#2a1418;z-index:3;pointer-events:none;"></div>
+                    <sc-if value="{{ p.hasVideo }}" hint-placeholder-val="{{ false }}">
+                      <video ref="{{ p.videoRef }}" onEnded="{{ p.onEnded }}" onTimeUpdate="{{ p.onTime }}" onLoadedMetadata="{{ p.onTime }}" loop="{{ false }}" playsInline="{{ true }}" preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></video>
+                      <sc-if value="{{ p.isPaused }}" hint-placeholder-val="{{ true }}">
+                        <div style="position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;background:rgba(42,20,24,.18);pointer-events:none;">
+                          <span class="ph-play" style="width:72px;height:72px;border-radius:999px;background:#fbd9e3;color:#6f0f18;box-shadow:0 10px 28px -6px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;padding-left:4px;box-sizing:border-box;">
+                            <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="play" size="{{ 30 }}" hint-size="30px,30px"></x-import>
+                          </span>
+                        </div>
+                      </sc-if>
+                      <div class="ph-ctrl" onClick="{{ p.stop }}" dir="ltr" style="position:absolute;left:12px;right:12px;bottom:12px;z-index:5;display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:999px;background:rgba(247,245,240,.92);box-shadow:0 6px 18px -6px rgba(0,0,0,.3);cursor:default;">
+                        <button class="ph-skip" onClick="{{ p.back }}" title="10 שניות אחורה" style="all:unset;cursor:pointer;flex:none;width:30px;height:30px;border-radius:999px;color:#6f0f18;display:flex;align-items:center;justify-content:center;" style-hover="background:#fbd9e3;">
+                          <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="rotate-ccw" size="{{ 16 }}" hint-size="16px,16px"></x-import>
+                        </button>
+                        <button onClick="{{ p.toggle }}" title="הפעלה / עצירה" style="all:unset;cursor:pointer;flex:none;width:30px;height:30px;border-radius:999px;background:#6f0f18;color:#fbd9e3;display:flex;align-items:center;justify-content:center;">
+                          <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="{{ p.soundIcon }}" size="{{ 14 }}" hint-size="14px,14px"></x-import>
+                        </button>
+                        <input type="range" min="0" max="1000" step="1" value="{{ p.progress }}" onChange="{{ p.seek }}" aria-label="מיקום בסרטון" style="flex:1;min-width:0;accent-color:#e64243;height:4px;cursor:pointer;">
+                        <button class="ph-skip" onClick="{{ p.fwd }}" title="10 שניות קדימה" style="all:unset;cursor:pointer;flex:none;width:30px;height:30px;border-radius:999px;color:#6f0f18;display:flex;align-items:center;justify-content:center;" style-hover="background:#fbd9e3;">
+                          <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="rotate-cw" size="{{ 16 }}" hint-size="16px,16px"></x-import>
+                        </button>
+                      </div>
+                    </sc-if>
+                    <sc-if value="{{ p.isEmpty }}" hint-placeholder-val="{{ true }}">
+                      <div class="ph-empty" style="position:absolute;inset:14px;border:1.5px dashed rgba(111,15,24,.4);border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:20px;color:#6f0f18;">
+                        <span class="ph-empty-icon" style="width:54px;height:54px;border-radius:14px;background:#e64243;color:#6f0f18;box-shadow:0 6px 13px -2px rgba(0,0,0,0.2);transform:rotate(-5deg);display:flex;align-items:center;justify-content:center;">
+                          <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="clapperboard" size="{{ 22 }}" hint-size="22px,22px"></x-import>
+                        </span>
+                        <span class="ph-empty-title" style="font-size:16px;font-weight:700;">סרטון בקרוב</span>
+                      </div>
+                    </sc-if>
+                  </div>
+                </div>
+                <figcaption class="ph-cap" style="margin-top:12px;text-align:center;font-size:14px;font-weight:700;color:#6f0f18;">{{ p.cat }}</figcaption>
+              </figure>
+            </sc-for>
+      </div>
+
+      <div style="margin-top:32px;display:flex;justify-content:center;">
+        <button onClick="{{ goContact }}" style="all:unset;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;height:50px;padding:0 26px;border-radius:999px;background:#6f0f18;color:#fbd9e3;font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;letter-spacing:.02em;box-shadow:0 7px 16px -3px rgba(0,0,0,0.2);transition:all 120ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-2px,-2px);box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);" style-active="transform:translate(3px,4px);box-shadow:0 1px 4px -1px rgba(0,0,0,0.16);">CONTACT ME</button>
+      </div>
+    </section>
+
+    <!-- 05 CONTACT -->
+    <section id="contact" data-screen-label="05 Contact" style="max-width:1180px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(20px,4vw,64px);">
+      <div data-reveal="1">
+        <h2 dir="ltr" style="margin:0;display:flex;justify-content:flex-end;align-items:center;gap:.25em;flex-wrap:wrap;line-height:1;">
+          <span style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(2.8rem,6.5vw,5.4rem);letter-spacing:-.045em;color:#6f0f18;">CONTACT</span>
+          <span style="display:inline-block;background:#e64243;color:#6f0f18;border-radius:.2em;padding:.02em .32em .1em;box-shadow:0 .08em .22em -.04em rgba(0,0,0,.22);transform:rotate(-3deg);font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(3rem,7vw,5.8rem);letter-spacing:-.02em;">ME</span>
+        </h2>
+        <p style="margin:28px 0 0;font-family:'Assistant',sans-serif;font-weight:800;font-size:clamp(1.6rem,3vw,2.25rem);line-height:1.2;color:#6f0f18;">התרשמתם? בואו נעבוד יחד</p>
+      </div>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;margin-top:clamp(36px,5vw,52px);">
+        <a href="https://wa.me/972524093322" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:28px;padding:28px;border-radius:22px;background:#ffffff;border:1.5px solid #6f0f18;box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);color:#6f0f18;transition:all 160ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-3px,-3px);box-shadow:0 14px 32px -6px rgba(0,0,0,0.2);color:#6f0f18;" style-active="transform:translate(3px,4px);box-shadow:0 3px 6px -1px rgba(0,0,0,0.16);">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="width:56px;height:56px;border-radius:14px;background:#fbd9e3;color:#6f0f18;box-shadow:0 6px 13px -2px rgba(0,0,0,0.2);transform:rotate(-5deg);display:flex;align-items:center;justify-content:center;">
+              <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="message-circle" size="{{ 24 }}" hint-size="24px,24px"></x-import>
+            </span>
+            <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="arrow-up-left" size="{{ 22 }}" hint-size="22px,22px"></x-import>
+          </div>
+          <div>
+            <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.14em;color:#d0302f;margin-bottom:6px;">WHATSAPP</div>
+            <div dir="ltr" style="text-align:right;font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,2.4vw,1.9rem);letter-spacing:-.02em;line-height:1.1;">0524093322</div>
+          </div>
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=lironsay@gmail.com" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:28px;padding:28px;border-radius:22px;background:#ffffff;border:1.5px solid #6f0f18;box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);color:#6f0f18;transition:all 160ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-3px,-3px);box-shadow:0 14px 32px -6px rgba(0,0,0,0.2);color:#6f0f18;" style-active="transform:translate(3px,4px);box-shadow:0 3px 6px -1px rgba(0,0,0,0.16);">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="width:56px;height:56px;border-radius:999px;background:#fbd9e3;color:#6f0f18;box-shadow:0 6px 13px -2px rgba(0,0,0,0.2);transform:rotate(4deg);display:flex;align-items:center;justify-content:center;">
+              <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="mail" size="{{ 24 }}" hint-size="24px,24px"></x-import>
+            </span>
+            <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="arrow-up-left" size="{{ 22 }}" hint-size="22px,22px"></x-import>
+          </div>
+          <div>
+            <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.14em;color:#d0302f;margin-bottom:6px;">EMAIL</div>
+            <div dir="ltr" style="text-align:right;font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(1.3rem,2vw,1.6rem);letter-spacing:-.02em;line-height:1.1;overflow-wrap:anywhere;">lironsay@gmail.com</div>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/liron.sayag" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:28px;padding:28px;border-radius:22px;background:#ffffff;border:1.5px solid #6f0f18;color:#6f0f18;box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);transition:all 160ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-3px,-3px);box-shadow:0 14px 32px -6px rgba(0,0,0,0.2);color:#6f0f18;" style-active="transform:translate(3px,4px);box-shadow:0 3px 6px -1px rgba(0,0,0,0.16);">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="width:56px;height:56px;border-radius:999px;background:#fbd9e3;color:#6f0f18;box-shadow:0 6px 13px -2px rgba(0,0,0,0.2);transform:rotate(-4deg);display:flex;align-items:center;justify-content:center;">
+              <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="instagram" size="{{ 24 }}" hint-size="24px,24px"></x-import>
+            </span>
+            <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="arrow-up-left" size="{{ 22 }}" hint-size="22px,22px"></x-import>
+          </div>
+          <div>
+            <div style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.14em;color:#d0302f;margin-bottom:6px;">INSTAGRAM</div>
+            <div dir="ltr" style="text-align:right;font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,2.4vw,1.9rem);letter-spacing:-.02em;line-height:1.1;">@liron.sayag</div>
+          </div>
+        </a>
+      </div>
+
+      <div data-reveal="1" style="margin-top:clamp(72px,10vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(24px,5vw,64px);align-items:start;">
+        <div>
+          <h3 dir="ltr" style="margin:0;text-align:right;"><span style="display:inline-block;background:#6f0f18;color:#fbd9e3;border-radius:999px;padding:.04em .45em .12em;box-shadow:0 .08em .22em -.04em rgba(0,0,0,.22);transform:rotate(-3deg);font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(2.6rem,5vw,3.8rem);line-height:1;">FAQ</span></h3>
+          <p style="margin:22px 0 0;font-family:'Assistant',sans-serif;font-weight:700;font-size:18px;color:#6f0f18;">שאלות ותשובות</p>
+        </div>
+        <div class="faq-list" style="grid-column:span 2;min-width:0;display:flex;flex-direction:column;gap:10px;">
+          <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="4">
+            <div style="background:#ffffff;border:1.5px solid #6f0f18;border-radius:14px;box-shadow:{{ q.shadow }};transition:box-shadow 180ms cubic-bezier(.22,.61,.36,1);">
+              <button onClick="{{ q.toggle }}" style="all:unset;cursor:pointer;box-sizing:border-box;width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 18px;">
+                <span style="font-family:'Assistant',sans-serif;font-weight:700;font-size:1.15rem;line-height:1.3;color:#6f0f18;">{{ q.q }}</span>
+                <span style="flex:none;width:30px;height:30px;border-radius:10px;background:#e64243;color:#6f0f18;box-shadow:0 4px 10px -2px rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;transition:transform 180ms cubic-bezier(.22,.61,.36,1);transform:{{ q.rot }};"><x-import component-from-global-scope="DesignSystem_d83544.Icon" name="plus" size="{{ 15 }}" hint-size="15px,15px"></x-import></span>
+              </button>
+              <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}">
+                <p style="margin:0;padding:0 18px 16px;font-size:1rem;line-height:1.7;color:#4a2b30;max-width:62ch;text-wrap:pretty;">{{ q.a }}</p>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div data-reveal="1" dir="ltr" style="margin-top:clamp(88px,12vw,144px);display:flex;flex-direction:column;align-items:center;gap:clamp(10px,1.4vw,18px);text-align:center;">
+        <span style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(1.9rem,7vw,6.4rem);letter-spacing:-.05em;line-height:1;color:#6f0f18;white-space:nowrap;margin-bottom:.12em;">READY TO CREATE</span>
+        <span style="display:inline-block;color:#e64243;font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(2rem,7.4vw,6.8rem);letter-spacing:-.02em;line-height:1.05;white-space:nowrap;">SOMETHING GREAT?</span>
+        <a href="https://wa.me/972524093322" target="_blank" rel="noopener" dir="rtl" style="margin-top:clamp(36px,5vw,56px);display:inline-flex;align-items:center;gap:12px;height:62px;padding:0 34px;border-radius:999px;background:#e64243;color:#6f0f18;border:1.5px solid #6f0f18;box-shadow:0 8px 19px -4px rgba(0,0,0,0.2);font-family:'Assistant',sans-serif;font-weight:800;font-size:21px;white-space:nowrap;transition:all 120ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-2px,-2px);box-shadow:0 11px 26px -5px rgba(0,0,0,0.2);color:#6f0f18;" style-active="transform:translate(3px,4px);box-shadow:0 1px 4px -1px rgba(0,0,0,0.16);">
+          <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="message-circle" size="{{ 22 }}" hint-size="22px,22px"></x-import>
+          בואו נדבר
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer style="border-top:1.5px solid #6f0f18;background:#fbd9e3;">
+    <div style="max-width:1180px;margin:0 auto;padding:28px clamp(20px,4vw,64px);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <img src="assets/logo.png" alt="Liron Social" style="height:56px;width:auto;display:block;">
+      <span dir="ltr" style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;color:#6f0f18;">UGC | CREATIVE | SOCIAL MEDIA MANAGEMENT</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;tiltElements&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Style&quot;},&quot;staggerPhones&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Gallery&quot;}}">
+const PAGES = ['cover', 'about', 'services', 'projects', 'contact'];
+const NAV_LABELS = ['ראשי', 'היכרות', 'שירותים', 'פרויקטים', 'יצירת קשר'];
+const CATS = [
+  { key: 'beauty', title: 'ביוטי וטיפוח' },
+  { key: 'digital', title: 'מוצרים דיגיטליים' },
+  { key: 'recipes', title: 'מתכונים וטבעונות' },
+  { key: 'places', title: 'המלצות על מקומות' },
+  { key: 'daily', title: 'אווירה ויום-יום' },
+];
+const FAQ = [
+  ['איך נראה תהליך העבודה?', 'מתחילים בהיכרות עם המותג והצרכים שלו, ממשיכים לרעיון וכתיבת תסריט, צילום ועריכה, ומסיימים בקבלת סרטון מוכן לשימוש.'],
+  ['האם אפשר להזמין כמה סרטונים?', 'כמובן, אפשר לבנות חבילת תוכן בהתאמה לצרכים של המותג, עם כמה סרטונים ורעיונות קריאייטיביים שונים.'],
+  ['האם את יכולה להציע רעיונות ותסריטים בעצמך?', 'כן! אני מלווה את התהליך משלב הרעיון והקונספט ועד לתסריט, צילום ועריכה, כך שלא צריך להגיע עם רעיון מוכן.'],
+  ['האם את מנהלת את כל עמוד הסושיאל או רק יוצרת תוכן?', 'אני מציעה גם יצירת תוכן נקודתית וגם ניהול סושיאל שוטף, בהתאם לצרכים של העסק.'],
+];
+const NICHES = ['אופנה', 'תזונה טבעונית', 'וולנס', 'לייף סטייל', 'זוגיות', 'טיולים'];
+const TILTS = ['-2deg', '1.5deg', '-1deg', '2deg', '-1.5deg', '1deg'];
+const DB = 'liron-portfolio-videos';
+function idb() {
+  return new Promise((res, rej) => {
+    const r = indexedDB.open(DB, 1);
+    r.onupgradeneeded = () => r.result.createObjectStore('v');
+    r.onsuccess = () => res(r.result);
+    r.onerror = () => rej(r.error);
+  });
+}
+async function idbOp(mode, fn) {
+  const db = await idb();
+  return new Promise((res, rej) => {
+    const tx = db.transaction('v', mode);
+    const req = fn(tx.objectStore('v'));
+    tx.oncomplete = () => res(req && req.result);
+    tx.onerror = () => rej(tx.error);
+  });
+}
+
+class Component extends DCLogic {
+  state = { page: 0, videos: {}, faq: -1, unmuted: null, filter: 'all' };
+  mainRef = React.createRef();
+
+  componentDidMount() {
+    const i = PAGES.indexOf((location.hash || '').slice(1));
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    if (i > 0) setTimeout(() => this.go(i), 300);
+    this.loadVideos();
+    this.setupReveal();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    if (this.io) this.io.disconnect();
+  }
+  setupReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    const root = this.mainRef.current;
+    if (!root) return;
+    this.io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        this.io.unobserve(en.target);
+        en.target.animate(
+          [{ opacity: 0, transform: 'translateY(14px) scale(.985)' }, { opacity: 1, transform: 'none' }],
+          { duration: 560, easing: 'cubic-bezier(.16,.84,.44,1)', fill: 'backwards' });
+      });
+    }, { threshold: 0.12 });
+    root.querySelectorAll('[data-reveal]').forEach(el => {
+      if (el.getBoundingClientRect().top > window.innerHeight) this.io.observe(el);
+    });
+  }
+  onScroll = () => {
+    let cur = 0;
+    PAGES.forEach((p, i) => { const el = document.getElementById(p); if (el && el.getBoundingClientRect().top < 140) cur = i; });
+    if (cur !== this.state.page) this.setState({ page: cur });
+  };
+  async loadVideos() {
+    for (const c of CATS) for (let n = 1; n <= 3; n++) {
+      const id = `${c.key}-${n}`;
+      let src = null;
+      if (!src) {
+        src = await new Promise(res => {
+          const v = document.createElement('video');
+          v.preload = 'metadata'; v.muted = true;
+          v.onloadedmetadata = () => res(`videos/${id}.mp4`);
+          v.onerror = () => res(null);
+          v.src = `videos/${id}.mp4`;
+        });
+      }
+      if (src) this.setState(s => ({ videos: { ...s.videos, [id]: src } }));
+    }
+  }
+  async setVideo(id, file) {
+    if (!file || !file.type.startsWith('video')) return;
+    try { await idbOp('readwrite', s => s.put(file, id)); } catch (e) {}
+    this.setState(s => ({ videos: { ...s.videos, [id]: URL.createObjectURL(file) } }));
+  }
+  async removeVideo(id) {
+    try { await idbOp('readwrite', s => s.delete(id)); } catch (e) {}
+    this.setState(s => { const v = { ...s.videos }; delete v[id]; return { videos: v }; });
+  }
+  vid(e) {
+    const scr = e.currentTarget.closest('[data-screen]');
+    return scr && scr.querySelector('video');
+  }
+  togglePlay(v, id) {
+    if (v.paused) {
+      document.querySelectorAll('video').forEach(o => { if (o !== v) o.pause(); });
+      v.muted = false; v.play();
+      this.setState({ unmuted: id });
+    } else {
+      v.pause();
+      this.setState({ unmuted: null });
+    }
+  }
+  pick(id) {
+    const inp = document.createElement('input');
+    inp.type = 'file'; inp.accept = 'video/*';
+    inp.onchange = () => this.setVideo(id, inp.files[0]);
+    inp.click();
+  }
+  go(i) {
+    const el = document.getElementById(PAGES[i]);
+    if (el) window.scrollTo({ top: i === 0 ? 0 : el.getBoundingClientRect().top + window.scrollY - 68, behavior: 'smooth' });
+    history.replaceState(null, '', '#' + PAGES[i]);
+  }
+
+  renderVals() {
+    const { page, videos, faq, unmuted, filter } = this.state;
+    const stagger = this.props.staggerPhones ?? true;
+    const tilt = this.props.tiltElements ?? true;
+    const autoplay = this.props.autoplayVideos ?? true;
+    const phoneRot = ['-2.5deg', '1.5deg', '-1deg'];
+    const cats = CATS.map((c, ci) => {
+      const alt = ci % 2 === 1;
+      return {
+        ...c,
+        anchor: 'cat-' + c.key,
+        bg: alt ? '#6f0f18' : '#e64243',
+        fg: alt ? '#fbd9e3' : '#6f0f18',
+        shadow: alt ? '0 8px 19px -4px rgba(0,0,0,.2)' : '0 8px 19px -4px rgba(0,0,0,.2)',
+        rot: tilt ? (alt ? '1.5deg' : '-2deg') : '0deg',
+        jump: () => {
+          const el = document.getElementById('cat-' + c.key);
+          if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
+        },
+        phones: [1, 2, 3].map(n => {
+          const id = `${c.key}-${n}`;
+          const src = videos[id];
+          return {
+            id, autoplay,
+            videoRef: el => { if (el && src && el.getAttribute('src') !== src + '#t=0.1') el.setAttribute('src', src + '#t=0.1'); },
+            hasVideo: !!src, isEmpty: !src,
+            cat: c.title,
+            rot: '0deg',
+            shadow: n === 2 ? '0 17px 38px -7px rgba(0,0,0,.2)' : '0 17px 38px -7px rgba(0,0,0,.2)',
+            isPaused: unmuted !== id,
+            soundIcon: unmuted === id ? 'pause' : 'play',
+            onEnded: () => { if (this.state.unmuted === id) this.setState({ unmuted: null }); },
+            progress: Math.round(((this.state.progress || {})[id] || 0) * 1000),
+            onTime: e => {
+              const v = e.currentTarget; if (!v.duration) return;
+              const fr = v.currentTime / v.duration;
+              this.setState(s => ({ progress: { ...(s.progress || {}), [id]: fr } }));
+            },
+            stop: e => e.stopPropagation(),
+            back: e => { e.stopPropagation(); const v = this.vid(e); if (v) v.currentTime = Math.max(0, v.currentTime - 10); },
+            fwd: e => { e.stopPropagation(); const v = this.vid(e); if (v) v.currentTime = Math.min(v.duration || 0, v.currentTime + 10); },
+            seek: e => { e.stopPropagation(); const v = this.vid(e); if (v && v.duration) v.currentTime = (+e.target.value / 1000) * v.duration; },
+            toggle: e => { e.stopPropagation(); const v = this.vid(e); if (v) this.togglePlay(v, id); },
+            onDragOver: e => e.preventDefault(),
+            onDrop: e => e.preventDefault(),
+            onClick: e => {
+              if (!src) return;
+              const v = e.currentTarget.querySelector('video');
+              if (v) this.togglePlay(v, id);
+            },
+            onRemove: e => { e.stopPropagation(); this.removeVideo(id); },
+          };
+        }),
+      };
+    });
+    const faqs = FAQ.map(([q, a], i) => ({
+      q, a,
+      open: faq === i,
+      rot: faq === i ? 'rotate(45deg)' : 'none',
+      shadow: faq === i ? '0 10px 22px -4px rgba(0,0,0,.2)' : '0 6px 13px -2px rgba(0,0,0,.2)',
+      toggle: () => this.setState(s => ({ faq: s.faq === i ? -1 : i })),
+    }));
+    return {
+      mainRef: this.mainRef,
+      goCover: () => this.go(0), goAbout: () => this.go(1), goServices: () => this.go(2), goProjects: () => this.go(3), goContact: () => this.go(4),
+      nav: NAV_LABELS.map((label, i) => ({
+        label, go: () => this.go(i),
+        color: page === i ? '#fbd9e3' : '#6f0f18',
+        bg: page === i ? '#6f0f18' : 'transparent',
+      })),
+      niches: NICHES.map((label, i) => ({ label, rot: tilt ? TILTS[i] : '0deg' })),
+      ugcItems: ['כתיבת תסריט.', 'פיתוח קונספט.', 'צילום.', 'עריכה.', 'הוספת אפקטי סאונד וכתוביות.', 'שליחת התוצר הסופי באיכות גבוהה.'],
+      socialItems: ['כתיבת תסריטים.', 'כתיבת תוכן שיווקי.', 'בניית גאנט חודשי.', 'ליווי ומענה ממני.', 'עריכת סרטונים ותמונות.', 'העלאת התכנים לרשתות.'],
+      cats,
+      phones: cats.filter(c => filter === 'all' || filter === c.key).flatMap(c => c.phones),
+      filters: [{ key: 'all', title: 'הכל' }, ...CATS].map(f => ({
+        title: f.title,
+        pressed: filter === f.key ? 'true' : 'false',
+        bg: filter === f.key ? '#6f0f18' : '#ffffff',
+        fg: filter === f.key ? '#fbd9e3' : '#6f0f18',
+        pick: () => {
+          document.querySelectorAll('#projects video').forEach(v => v.pause());
+          this.setState({ filter: f.key, unmuted: null });
+        },
+      })),
+      faqs,
+    };
+  }
+}
+</script>
+</body>
+</html>

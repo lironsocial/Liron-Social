@@ -1,0 +1,11 @@
+:root{
+  --shadow-none:none;
+  --shadow-sm:0 1px 2px rgba(42,20,24,.06);
+  --shadow-card:0 1px 1px rgba(42,20,24,.04),0 8px 24px -12px rgba(42,20,24,.16);
+  --shadow-raised:0 2px 4px rgba(42,20,24,.05),0 18px 40px -18px rgba(42,20,24,.22);
+  --shadow-overlay:0 32px 80px -24px rgba(42,20,24,.34);
+  --inset-field:inset 0 1px 0 rgba(42,20,24,.05);
+  --ring-focus:0 0 0 3px rgba(230,66,67,.28);
+  --gradient-protect:linear-gradient(to top,rgba(77,10,17,.72),rgba(77,10,17,0)); /* @kind color */
+  --gradient-warm:linear-gradient(160deg,var(--blush-100),var(--sand-100));
+}

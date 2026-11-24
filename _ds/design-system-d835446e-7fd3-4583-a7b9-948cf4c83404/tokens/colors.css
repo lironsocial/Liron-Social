@@ -1,0 +1,74 @@
+:root{
+  /* Brand core — the four given values */
+  --blush-100:#fbd9e3;
+  --sand-100:#eeebe3;
+  --wine-900:#6f0f18;
+  --coral-500:#e64243;
+
+  /* Derived ramps (oklch-harmonised around the four cores) */
+  --blush-50:#fdecf1;
+  --blush-200:#f6c2d1;
+  --blush-300:#eda3b8;
+
+  --sand-50:#f7f5f0;
+  --sand-200:#e2ded2;
+  --sand-300:#cec9ba;
+  --sand-400:#a9a394;
+
+  --wine-700:#8d1a24;
+  --wine-800:#7d141d;
+  --wine-950:#4d0a11;
+
+  --coral-300:#f28a89;
+  --coral-400:#ec6260;
+  --coral-600:#d0302f;
+
+  --ink-900:#2a1418;
+  --ink-700:#4a2b30;
+  --ink-500:#6f545a;
+  --ink-300:#9c868b;
+  --white:#ffffff;
+
+  /* Semantic — surfaces */
+  --surface-page:var(--sand-50);
+  --surface-card:var(--white);
+  --surface-raised:var(--sand-100);
+  --surface-tint:var(--blush-50);
+  --surface-inverse:var(--wine-900);
+  --surface-accent:var(--blush-100);
+
+  /* Semantic — text */
+  --text-body:var(--ink-700);
+  --text-strong:var(--wine-900);
+  --text-heading:var(--ink-900);
+  --text-muted:var(--ink-500);
+  --text-inverse:var(--sand-50);
+  --text-link:var(--coral-600);
+  --text-link-hover:var(--wine-900);
+
+  /* Semantic — lines */
+  --line-hairline:rgba(42,20,24,.10);
+  --line-soft:var(--sand-200);
+  --line-strong:var(--wine-900);
+  --line-focus:var(--coral-500);
+
+  /* Semantic — interactive */
+  --action-primary:var(--wine-900);
+  --action-primary-hover:var(--wine-800);
+  --action-primary-press:var(--wine-950);
+  --action-accent:var(--coral-500);
+  --action-accent-hover:var(--coral-600);
+  --action-quiet:var(--blush-100);
+  --action-quiet-hover:var(--blush-200);
+  --action-disabled:var(--sand-200);
+
+  /* Semantic — status */
+  --status-positive:#3f6f4d;
+  --status-positive-tint:#e4efe6;
+  --status-warning:#a56a1c;
+  --status-warning-tint:#f7ecd9;
+  --status-critical:var(--coral-600);
+  --status-critical-tint:#fbe0df;
+  --status-info:var(--wine-700);
+  --status-info-tint:var(--blush-50);
+}
