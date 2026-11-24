@@ -445,21 +445,10 @@ class Component extends DCLogic {
     PAGES.forEach((p, i) => { const el = document.getElementById(p); if (el && el.getBoundingClientRect().top < 140) cur = i; });
     if (cur !== this.state.page) this.setState({ page: cur });
   };
-  async loadVideos() {
-    for (const c of CATS) for (let n = 1; n <= 3; n++) {
-      const id = `${c.key}-${n}`;
-      let src = null;
-      if (!src) {
-        src = await new Promise(res => {
-          const v = document.createElement('video');
-          v.preload = 'metadata'; v.muted = true;
-          v.onloadedmetadata = () => res(`videos/${id}.mp4`);
-          v.onerror = () => res(null);
-          v.src = `videos/${id}.mp4`;
-        });
-      }
-      if (src) this.setState(s => ({ videos: { ...s.videos, [id]: src } }));
-    }
+  loadVideos() {
+    const videos = {};
+    for (const c of CATS) for (let n = 1; n <= 3; n++) videos[`${c.key}-${n}`] = `videos/${c.key}-${n}.mp4`;
+    this.setState({ videos });
   }
   async setVideo(id, file) {
     if (!file || !file.type.startsWith('video')) return;
