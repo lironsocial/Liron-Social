@@ -36,16 +36,16 @@
     .glass-soft{background:url("assets/grain-soft.png") 0 0/180px 180px,linear-gradient(135deg,rgba(255,255,255,.34),rgba(255,255,255,.10)) !important;-webkit-backdrop-filter:blur(10px) saturate(130%);backdrop-filter:blur(10px) saturate(130%);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 0 0 1px rgba(255,255,255,.3),0 22px 60px -24px rgba(0,0,0,.25) !important;}
     .glass-red{background:url("assets/grain-soft.png") 0 0/180px 180px,linear-gradient(135deg,rgba(230,66,67,.82),rgba(230,66,67,.6));-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 0 0 1px rgba(255,255,255,.18),0 14px 30px -12px rgba(0,0,0,.28);}
     @media (max-width:700px){
-      .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important;}
+      .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:8px !important;margin-inline:-8px !important;}
       .svc-grid article > div{padding:12px !important;gap:6px !important;}
       .svc-grid article > div > div:first-child{flex-direction:column;align-items:flex-start !important;gap:8px !important;}
       .svc-grid article > div > div:first-child > span{width:34px !important;height:34px !important;border-radius:10px !important;}
       .svc-grid article > div > div:first-child > span svg{width:18px;height:18px;}
       .svc-grid h3{font-size:1.08rem !important;}
       .svc-grid p,.svc-grid li{font-size:.8rem !important;line-height:1.45 !important;}
-      .svc-grid ul{grid-template-columns:1fr !important;gap:6px !important;}
-      .svc-grid li{gap:6px !important;}
-      .svc-grid li > span{width:16px !important;height:16px !important;border-radius:5px !important;}
+      .svc-grid ul{display:flex !important;flex-direction:column !important;gap:7px !important;}
+      .svc-grid li{display:block !important;position:relative !important;height:auto !important;padding-inline-start:22px !important;}
+      .svc-grid li > span{position:absolute !important;inset-inline-start:0;top:2px;width:16px !important;height:16px !important;border-radius:5px !important;}
       .svc-grid li > span svg{width:10px;height:10px;}
     }
     .filter-btn{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);}
