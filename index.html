@@ -89,7 +89,7 @@
 
 <div class="paper" dir="rtl" style="min-height:100vh;font-family:'Assistant','DM Sans',sans-serif;color:#4a2b30;overflow-x:hidden;">
 
-  <header style="position:sticky;top:0;z-index:20;background:rgba(247,245,240,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1.5px solid #6f0f18;">
+  <header style="position:sticky;top:0;z-index:20;background:rgba(247,245,240,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 8px 28px -14px rgba(0,0,0,.28);">
     <div class="hdr" style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,64px);height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
       <button onClick="{{ goCover }}" style="all:unset;cursor:pointer;display:flex;align-items:center;flex:none;transition:transform 180ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:rotate(-4deg) scale(1.04);">
         <img src="assets/logo.png" alt="Liron Social" style="height:44px;width:auto;display:block;">
@@ -106,7 +106,7 @@
 
     <!-- 01 COVER -->
     <section id="cover" data-screen-label="01 Cover" style="background:transparent;padding:clamp(12px,2vw,24px);">
-      <div dir="ltr" style="position:relative;min-height:calc(100vh - 68px - 2 * clamp(12px,2vw,24px));border:1.5px solid #6f0f18;border-radius:28px;display:grid;grid-template-rows:1fr auto;padding:clamp(20px,3.5vw,44px);box-sizing:border-box;">
+      <div dir="ltr" style="position:relative;min-height:calc(100vh - 68px - 2 * clamp(12px,2vw,24px));box-shadow:0 22px 60px -24px rgba(0,0,0,.28);border-radius:28px;display:grid;grid-template-rows:1fr auto;padding:clamp(20px,3.5vw,44px);box-sizing:border-box;">
 
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(24px,5vw,56px) 0;">
           <div style="perspective:1200px;margin-bottom:clamp(28px,4vw,48px);">
@@ -147,7 +147,7 @@
       <div class="about-grid" data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(56px,7vw,96px);align-items:center;">
         <div class="about-photo" style="display:none;position:relative;max-width:420px;width:100%;justify-self:center;">
           <div style="position:absolute;inset:0;transform:translate(16px,16px) rotate(3deg);background:#e64243;border-radius:999px 999px 22px 22px;"></div>
-          <div style="position:relative;aspect-ratio:4/5;border-radius:999px 999px 22px 22px;overflow:hidden;background:#fbd9e3;border:1.5px solid #6f0f18;transform:rotate(-1.5deg);">
+          <div style="position:relative;aspect-ratio:4/5;border-radius:999px 999px 22px 22px;overflow:hidden;background:#fbd9e3;transform:rotate(-1.5deg);">
             <image-slot id="about-photo" shape="rect" placeholder="תמונה אישית שלי"></image-slot>
           </div>
           <div class="about-badge" dir="ltr" style="position:absolute;bottom:-18px;right:-8px;background:#6f0f18;color:#fbd9e3;border-radius:999px;padding:10px 20px;box-shadow:0 7px 16px -3px rgba(0,0,0,0.2);transform:rotate(-4deg);font-family:'Instrument Serif',serif;font-style:italic;font-size:22px;line-height:1;">@liron.sayag</div>
@@ -178,7 +178,7 @@
       </h2>
 
       <div data-reveal="1" style="max-width:880px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(18px,2.4vw,28px);align-items:stretch;">
-        <article style="background:#ffffff;border:1.5px solid #6f0f18;border-radius:20px;box-shadow:0 13px 29px -5px rgba(0,0,0,0.2);display:flex;flex-direction:column;">
+        <article style="background:#ffffff;border-radius:20px;box-shadow:0 13px 29px -5px rgba(0,0,0,0.2);display:flex;flex-direction:column;">
           <div style="padding:clamp(18px,2vw,24px);display:flex;flex-direction:column;gap:10px;flex:1;">
             <div style="display:flex;align-items:center;gap:16px;">
               <span style="width:48px;height:48px;flex:none;border-radius:12px;background:#e64243;color:#6f0f18;box-shadow:0 6px 13px -2px rgba(0,0,0,0.2);transform:rotate(-5deg);display:flex;align-items:center;justify-content:center;"><x-import component-from-global-scope="DesignSystem_d83544.Icon" name="clapperboard" size="{{ 26 }}" hint-size="26px,26px"></x-import></span>
@@ -238,7 +238,7 @@
         </h2>
         <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(36px,5vw,52px);">
           <sc-for list="{{ filters }}" as="f" hint-placeholder-count="6">
-            <button class="filter-btn" onClick="{{ f.pick }}" aria-pressed="{{ f.pressed }}" style="all:unset;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;height:42px;padding:0 20px;border-radius:999px;border:1.5px solid #6f0f18;background:{{ f.bg }};font-size:16px;font-weight:700;color:{{ f.fg }};box-shadow:0 4px 10px -2px rgba(0,0,0,0.2);transition:all 120ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-2px,-2px);box-shadow:0 7px 16px -3px rgba(0,0,0,0.2);" style-active="transform:translate(2px,2px);box-shadow:0 1px 4px -1px rgba(0,0,0,0.16);">{{ f.title }}</button>
+            <button class="filter-btn" onClick="{{ f.pick }}" aria-pressed="{{ f.pressed }}" style="all:unset;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;height:42px;padding:0 20px;border-radius:999px;background:{{ f.bg }};font-size:16px;font-weight:700;color:{{ f.fg }};box-shadow:0 4px 10px -2px rgba(0,0,0,0.2);transition:all 120ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-2px,-2px);box-shadow:0 7px 16px -3px rgba(0,0,0,0.2);" style-active="transform:translate(2px,2px);box-shadow:0 1px 4px -1px rgba(0,0,0,0.16);">{{ f.title }}</button>
           </sc-for>
         </div>
       </div>
@@ -302,7 +302,7 @@
       </div>
 
       <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:28px;margin-top:clamp(36px,5vw,52px);">
-        <a href="https://wa.me/972524093322" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:28px;padding:28px;border-radius:22px;background:#ffffff;border:1.5px solid #6f0f18;box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);color:#6f0f18;transition:all 160ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-3px,-3px);box-shadow:0 14px 32px -6px rgba(0,0,0,0.2);color:#6f0f18;" style-active="transform:translate(3px,4px);box-shadow:0 3px 6px -1px rgba(0,0,0,0.16);">
+        <a href="https://wa.me/972524093322" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:28px;padding:28px;border-radius:22px;background:#ffffff;box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);color:#6f0f18;transition:all 160ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-3px,-3px);box-shadow:0 14px 32px -6px rgba(0,0,0,0.2);color:#6f0f18;" style-active="transform:translate(3px,4px);box-shadow:0 3px 6px -1px rgba(0,0,0,0.16);">
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <span style="width:56px;height:56px;border-radius:14px;background:#fbd9e3;color:#6f0f18;box-shadow:0 6px 13px -2px rgba(0,0,0,0.2);transform:rotate(-5deg);display:flex;align-items:center;justify-content:center;">
               <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="message-circle" size="{{ 24 }}" hint-size="24px,24px"></x-import>
@@ -314,7 +314,7 @@
             <div dir="ltr" style="text-align:right;font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,2.4vw,1.9rem);letter-spacing:-.02em;line-height:1.1;">0524093322</div>
           </div>
         </a>
-        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=lironsay@gmail.com" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:28px;padding:28px;border-radius:22px;background:#ffffff;border:1.5px solid #6f0f18;box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);color:#6f0f18;transition:all 160ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-3px,-3px);box-shadow:0 14px 32px -6px rgba(0,0,0,0.2);color:#6f0f18;" style-active="transform:translate(3px,4px);box-shadow:0 3px 6px -1px rgba(0,0,0,0.16);">
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=lironsay@gmail.com" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:28px;padding:28px;border-radius:22px;background:#ffffff;box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);color:#6f0f18;transition:all 160ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-3px,-3px);box-shadow:0 14px 32px -6px rgba(0,0,0,0.2);color:#6f0f18;" style-active="transform:translate(3px,4px);box-shadow:0 3px 6px -1px rgba(0,0,0,0.16);">
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <span style="width:56px;height:56px;border-radius:999px;background:#fbd9e3;color:#6f0f18;box-shadow:0 6px 13px -2px rgba(0,0,0,0.2);transform:rotate(4deg);display:flex;align-items:center;justify-content:center;">
               <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="mail" size="{{ 24 }}" hint-size="24px,24px"></x-import>
@@ -326,7 +326,7 @@
             <div dir="ltr" style="text-align:right;font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(1.3rem,2vw,1.6rem);letter-spacing:-.02em;line-height:1.1;overflow-wrap:anywhere;">lironsay@gmail.com</div>
           </div>
         </a>
-        <a href="https://www.instagram.com/liron.sayag" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:28px;padding:28px;border-radius:22px;background:#ffffff;border:1.5px solid #6f0f18;color:#6f0f18;box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);transition:all 160ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-3px,-3px);box-shadow:0 14px 32px -6px rgba(0,0,0,0.2);color:#6f0f18;" style-active="transform:translate(3px,4px);box-shadow:0 3px 6px -1px rgba(0,0,0,0.16);">
+        <a href="https://www.instagram.com/liron.sayag" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:28px;padding:28px;border-radius:22px;background:#ffffff;color:#6f0f18;box-shadow:0 10px 22px -4px rgba(0,0,0,0.2);transition:all 160ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-3px,-3px);box-shadow:0 14px 32px -6px rgba(0,0,0,0.2);color:#6f0f18;" style-active="transform:translate(3px,4px);box-shadow:0 3px 6px -1px rgba(0,0,0,0.16);">
           <div style="display:flex;justify-content:space-between;align-items:center;">
             <span style="width:56px;height:56px;border-radius:999px;background:#fbd9e3;color:#6f0f18;box-shadow:0 6px 13px -2px rgba(0,0,0,0.2);transform:rotate(-4deg);display:flex;align-items:center;justify-content:center;">
               <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="instagram" size="{{ 24 }}" hint-size="24px,24px"></x-import>
@@ -347,7 +347,7 @@
         </div>
         <div class="faq-list" style="grid-column:span 2;min-width:0;display:flex;flex-direction:column;gap:10px;">
           <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="4">
-            <div style="background:#ffffff;border:1.5px solid #6f0f18;border-radius:14px;box-shadow:{{ q.shadow }};transition:box-shadow 180ms cubic-bezier(.22,.61,.36,1);">
+            <div style="background:#ffffff;border-radius:14px;box-shadow:{{ q.shadow }};transition:box-shadow 180ms cubic-bezier(.22,.61,.36,1);">
               <button onClick="{{ q.toggle }}" style="all:unset;cursor:pointer;box-sizing:border-box;width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 18px;">
                 <span style="font-family:'Assistant',sans-serif;font-weight:700;font-size:1.15rem;line-height:1.3;color:#6f0f18;">{{ q.q }}</span>
                 <span style="flex:none;width:30px;height:30px;border-radius:10px;background:#e64243;color:#6f0f18;box-shadow:0 4px 10px -2px rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;transition:transform 180ms cubic-bezier(.22,.61,.36,1);transform:{{ q.rot }};"><x-import component-from-global-scope="DesignSystem_d83544.Icon" name="plus" size="{{ 15 }}" hint-size="15px,15px"></x-import></span>
@@ -363,7 +363,7 @@
       <div data-reveal="1" dir="ltr" style="margin-top:clamp(88px,12vw,144px);display:flex;flex-direction:column;align-items:center;gap:clamp(10px,1.4vw,18px);text-align:center;">
         <span style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(1.9rem,7vw,6.4rem);letter-spacing:-.05em;line-height:1;color:#6f0f18;white-space:nowrap;margin-bottom:.12em;">READY TO CREATE</span>
         <span style="display:inline-block;color:#e64243;font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(2rem,7.4vw,6.8rem);letter-spacing:-.02em;line-height:1.05;white-space:nowrap;">SOMETHING GREAT?</span>
-        <a href="https://wa.me/972524093322" target="_blank" rel="noopener" dir="rtl" style="margin-top:clamp(36px,5vw,56px);display:inline-flex;align-items:center;gap:12px;height:62px;padding:0 34px;border-radius:999px;background:#e64243;color:#6f0f18;border:1.5px solid #6f0f18;box-shadow:0 8px 19px -4px rgba(0,0,0,0.2);font-family:'Assistant',sans-serif;font-weight:800;font-size:21px;white-space:nowrap;transition:all 120ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-2px,-2px);box-shadow:0 11px 26px -5px rgba(0,0,0,0.2);color:#6f0f18;" style-active="transform:translate(3px,4px);box-shadow:0 1px 4px -1px rgba(0,0,0,0.16);">
+        <a href="https://wa.me/972524093322" target="_blank" rel="noopener" dir="rtl" style="margin-top:clamp(36px,5vw,56px);display:inline-flex;align-items:center;gap:12px;height:62px;padding:0 34px;border-radius:999px;background:#e64243;color:#6f0f18;box-shadow:0 8px 19px -4px rgba(0,0,0,0.2);font-family:'Assistant',sans-serif;font-weight:800;font-size:21px;white-space:nowrap;transition:all 120ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translate(-2px,-2px);box-shadow:0 11px 26px -5px rgba(0,0,0,0.2);color:#6f0f18;" style-active="transform:translate(3px,4px);box-shadow:0 1px 4px -1px rgba(0,0,0,0.16);">
           <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="message-circle" size="{{ 22 }}" hint-size="22px,22px"></x-import>
           בואו נדבר
         </a>
@@ -371,7 +371,7 @@
     </section>
   </main>
 
-  <footer style="border-top:1.5px solid #6f0f18;background:#fbd9e3;">
+  <footer style="box-shadow:0 -8px 28px -14px rgba(0,0,0,.2);background:#fbd9e3;">
     <div style="max-width:1180px;margin:0 auto;padding:28px clamp(20px,4vw,64px);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
       <img src="assets/logo.png" alt="Liron Social" style="height:56px;width:auto;display:block;">
       <span dir="ltr" style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;color:#6f0f18;">UGC | CREATIVE | SOCIAL MEDIA MANAGEMENT</span>
