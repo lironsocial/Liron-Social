@@ -9,6 +9,7 @@
 <meta property="og:description" content="UGC | Creative | Social Media Management">
 <meta property="og:image" content="assets/logo.png">
 <link rel="icon" type="image/png" href="assets/logo.png">
+<script data-goatcounter="https://lironsocial.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -481,6 +482,7 @@ class Component extends DCLogic {
     if (v.paused) {
       document.querySelectorAll('video').forEach(o => { if (o !== v) o.pause(); });
       v.muted = false; v.play();
+      try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'video-' + id, title: 'סרטון: ' + id, event: true }); } catch (e) {}
       this.setState({ unmuted: id });
     } else {
       v.pause();
