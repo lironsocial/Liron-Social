@@ -30,6 +30,9 @@
   <script src="./image-slot.js"></script>
   <style>
     html,body{margin:0;background:#f7f5f0;}
+    .rv{opacity:0;transform:translate3d(0,32px,0);transition:opacity 900ms cubic-bezier(.22,.61,.36,1),transform 900ms cubic-bezier(.22,.61,.36,1);will-change:opacity,transform;}
+    .rv.rv-in{opacity:1;transform:none;}
+    .paper::before,.paper::after{transform:translateZ(0);will-change:transform;}
     .paper{position:relative;isolation:isolate;background-color:#f7f5f0;}
     .paper::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(55% 45% at 0% 0%,rgba(251,217,227,.95),transparent 72%),radial-gradient(45% 35% at 22% 6%,rgba(255,232,210,.75),transparent 70%),radial-gradient(70% 55% at 100% 50%,rgba(230,66,67,.30),transparent 70%),radial-gradient(60% 50% at 0% 88%,rgba(251,217,227,.95),transparent 72%),radial-gradient(55% 45% at 95% 100%,rgba(111,15,24,.14),transparent 70%),#f7f5f0;}
     .paper::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:url("assets/grain.png");background-size:180px 180px;opacity:.5;}
@@ -243,7 +246,7 @@
         </div>
       </div>
 
-      <div class="ph-grid" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,3vw,44px) clamp(12px,2.4vw,36px);max-width:1180px;margin:0 auto;box-sizing:border-box;padding:clamp(36px,5vw,56px) clamp(20px,4vw,64px) 48px;align-items:start;">
+      <div class="ph-grid" data-reveal="1" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,3vw,44px) clamp(12px,2.4vw,36px);max-width:1180px;margin:0 auto;box-sizing:border-box;padding:clamp(36px,5vw,56px) clamp(20px,4vw,64px) 48px;align-items:start;">
             <sc-for list="{{ phones }}" as="p" hint-placeholder-count="12">
               <figure style="margin:0;min-width:0;transform:rotate({{ p.rot }});transition:transform 320ms cubic-bezier(.22,.61,.36,1);" style-hover="transform:translateY(-6px);">
                 <div class="ph-bezel" style="padding:9px;border-radius:44px;background:#2a1418;box-shadow:{{ p.shadow }};">
@@ -433,20 +436,21 @@ class Component extends DCLogic {
     if (this.io) this.io.disconnect();
   }
   setupReveal() {
-    if (!('IntersectionObserver' in window)) return;
     const root = this.mainRef.current;
-    if (!root) return;
+    if (!root || !('IntersectionObserver' in window)) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     this.io = new IntersectionObserver(entries => {
       entries.forEach(en => {
         if (!en.isIntersecting) return;
         this.io.unobserve(en.target);
-        en.target.animate(
-          [{ opacity: 0, transform: 'translateY(14px) scale(.985)' }, { opacity: 1, transform: 'none' }],
-          { duration: 560, easing: 'cubic-bezier(.16,.84,.44,1)', fill: 'backwards' });
+        requestAnimationFrame(() => en.target.classList.add('rv-in'));
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
     root.querySelectorAll('[data-reveal]').forEach(el => {
-      if (el.getBoundingClientRect().top > window.innerHeight) this.io.observe(el);
+      if (el.getBoundingClientRect().top > window.innerHeight * 0.9) {
+        el.classList.add('rv');
+        this.io.observe(el);
+      }
     });
   }
   onScroll = () => {
