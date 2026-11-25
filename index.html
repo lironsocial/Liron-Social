@@ -375,11 +375,12 @@
 const PAGES = ['cover', 'about', 'services', 'projects', 'contact'];
 const NAV_LABELS = ['ראשי', 'היכרות', 'שירותים', 'פרויקטים', 'יצירת קשר'];
 const CATS = [
-  { key: 'beauty', title: 'ביוטי וטיפוח' },
-  { key: 'digital', title: 'מוצרים דיגיטליים' },
-  { key: 'recipes', title: 'מתכונים וטבעונות' },
-  { key: 'places', title: 'המלצות על מקומות' },
-  { key: 'daily', title: 'אווירה ויום-יום' },
+  { key: 'beauty', title: 'ביוטי וטיפוח', count: 3 },
+  { key: 'digital', title: 'מוצרים דיגיטליים', count: 3 },
+  { key: 'recipes', title: 'מתכונים וטבעונות', count: 3 },
+  { key: 'places', title: 'המלצות על מקומות', count: 3 },
+  { key: 'lifestyle', title: 'לייף סטייל', count: 1 },
+  { key: 'daily', title: 'אווירה ויום-יום', count: 3 },
 ];
 const FAQ = [
   ['איך נראה תהליך העבודה?', 'מתחילים בהיכרות עם המותג והצרכים שלו, ממשיכים לרעיון וכתיבת תסריט, צילום ועריכה, ומסיימים בקבלת סרטון מוכן לשימוש.'],
@@ -447,7 +448,7 @@ class Component extends DCLogic {
   };
   loadVideos() {
     const videos = {};
-    for (const c of CATS) for (let n = 1; n <= 3; n++) videos[`${c.key}-${n}`] = `videos/${c.key}-${n}.mp4`;
+    for (const c of CATS) for (let n = 1; n <= c.count; n++) videos[`${c.key}-${n}`] = `videos/${c.key}-${n}.mp4`;
     this.setState({ videos });
   }
   async setVideo(id, file) {
@@ -504,7 +505,7 @@ class Component extends DCLogic {
           const el = document.getElementById('cat-' + c.key);
           if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
         },
-        phones: [1, 2, 3].map(n => {
+        phones: Array.from({ length: c.count }, (_, i) => i + 1).map(n => {
           const id = `${c.key}-${n}`;
           const src = videos[id];
           return {
