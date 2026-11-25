@@ -31,7 +31,7 @@
   <script src="./image-slot.js"></script>
   <style>
     html,body{margin:0;background:#f7f5f0;}
-    .glass{background:url("assets/grain-soft.png") 0 0/180px 180px,linear-gradient(135deg,rgba(255,255,255,.58),rgba(255,255,255,.24)) !important;-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.75),inset 0 0 0 1px rgba(255,255,255,.32),0 14px 34px -14px rgba(0,0,0,.24) !important;}
+    .glass{background:url("assets/grain-soft.png") 0 0/180px 180px,linear-gradient(135deg,rgba(255,255,255,.74),rgba(255,255,255,.46)) !important;-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.75),inset 0 0 0 1px rgba(255,255,255,.32),0 14px 34px -14px rgba(0,0,0,.24) !important;}
     .glass-dark{background:url("assets/grain-soft.png") 0 0/180px 180px,linear-gradient(135deg,rgba(111,15,24,.88),rgba(111,15,24,.70)) !important;-webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 0 0 1px rgba(255,255,255,.10),0 14px 34px -14px rgba(0,0,0,.3) !important;}
     .glass-soft{background:url("assets/grain-soft.png") 0 0/180px 180px,linear-gradient(135deg,rgba(255,255,255,.34),rgba(255,255,255,.10)) !important;-webkit-backdrop-filter:blur(10px) saturate(130%);backdrop-filter:blur(10px) saturate(130%);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),inset 0 0 0 1px rgba(255,255,255,.3),0 22px 60px -24px rgba(0,0,0,.25) !important;}
     .filter-btn{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);}
@@ -57,6 +57,7 @@
     .ls-face,.ls-back{backface-visibility:hidden;-webkit-backface-visibility:hidden;}
     @keyframes lsSpin{from{transform:rotateX(5deg) rotateY(-28deg)}to{transform:rotateX(5deg) rotateY(28deg)}}
     @media (prefers-reduced-motion:reduce){.ls-spin{animation:none}}
+    @media (max-width:700px){.paper::after{background-size:90px 90px;opacity:.42;}.glass,.glass-soft,.glass-dark{background-size:90px 90px,auto !important;}}
     @media (max-width:900px){.ph-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;}}
     @media (max-width:700px){
       .hdr{gap:10px !important;padding:0 14px !important;}
@@ -209,20 +210,20 @@
           </div>
         </article>
 
-        <article class="glass-dark" style="color:#f7f5f0;border-radius:20px;box-shadow:0 13px 29px -5px rgba(0,0,0,0.2);display:flex;flex-direction:column;">
+        <article class="glass" style="border-radius:20px;box-shadow:0 13px 29px -5px rgba(0,0,0,0.2);display:flex;flex-direction:column;">
           <div style="padding:clamp(18px,2vw,24px);display:flex;flex-direction:column;gap:10px;flex:1;">
             <div style="display:flex;align-items:center;gap:16px;">
-              <span style="width:48px;height:48px;flex:none;border-radius:999px;background:#fbd9e3;color:#6f0f18;box-shadow:0 6px 13px -2px rgba(0,0,0,0.2);transform:rotate(5deg);display:flex;align-items:center;justify-content:center;"><x-import component-from-global-scope="DesignSystem_d83544.Icon" name="share-2" size="{{ 26 }}" hint-size="26px,26px"></x-import></span>
-              <h3 style="margin:0;font-family:'Assistant',sans-serif;font-weight:800;font-size:clamp(1.55rem,2.4vw,1.95rem);line-height:1.1;color:#fbd9e3;">ניהול סושיאל שוטף</h3>
+              <span style="width:48px;height:48px;flex:none;border-radius:12px;background:#e64243;color:#6f0f18;box-shadow:0 6px 13px -2px rgba(0,0,0,0.2);transform:rotate(-5deg);display:flex;align-items:center;justify-content:center;"><x-import component-from-global-scope="DesignSystem_d83544.Icon" name="share-2" size="{{ 26 }}" hint-size="26px,26px"></x-import></span>
+              <h3 style="margin:0;font-family:'Assistant',sans-serif;font-weight:800;font-size:clamp(1.55rem,2.4vw,1.95rem);line-height:1.1;color:#6f0f18;">ניהול סושיאל שוטף</h3>
             </div>
-            <p dir="ltr" style="margin:0;text-align:right;font-family:'Instrument Serif',serif;font-style:italic;font-size:1.25rem;color:#f28a89;">Instagram · TikTok · Facebook</p>
-            <div style="height:1.5px;background:rgba(251,217,227,.22);"></div>
+            <p dir="ltr" style="margin:0;text-align:right;font-family:'Instrument Serif','Assistant',serif;font-style:italic;font-size:1.25rem;color:#d0302f;">Instagram · TikTok · Facebook</p>
+            <div style="height:1.5px;background:#fbd9e3;"></div>
             <p style="margin:0;font-size:1.0625rem;line-height:1.65;text-wrap:pretty;">ניהול סושיאל שוטף בכל הפלטפורמות – אינסטגרם, טיקטוק ופייסבוק.</p>
-            <p style="margin:6px 0 0;font-size:1.0625rem;font-weight:700;color:#fbd9e3;">השירות כולל:</p>
+            <p style="margin:6px 0 0;font-size:1.0625rem;line-height:1.65;font-weight:700;color:#6f0f18;">השירות כולל:</p>
             <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:10px 20px;">
               <sc-for list="{{ socialItems }}" as="s" hint-placeholder-count="6">
                 <li style="display:flex;align-items:center;gap:10px;font-size:1.0625rem;line-height:1.4;">
-                  <span style="width:24px;height:24px;flex:none;border-radius:999px;background:#fbd9e3;color:#6f0f18;box-shadow:0 3px 6px -1px rgba(0,0,0,0.16);display:flex;align-items:center;justify-content:center;">
+                  <span style="width:24px;height:24px;flex:none;border-radius:7px;background:#e64243;color:#6f0f18;box-shadow:0 3px 6px -1px rgba(0,0,0,0.16);display:flex;align-items:center;justify-content:center;">
                     <x-import component-from-global-scope="DesignSystem_d83544.Icon" name="check" size="{{ 14 }}" hint-size="14px,14px"></x-import>
                   </span>{{ s }}
                 </li>
