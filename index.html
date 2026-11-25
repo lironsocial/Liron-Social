@@ -443,7 +443,7 @@ class Component extends DCLogic {
       entries.forEach(en => {
         if (!en.isIntersecting) return;
         this.io.unobserve(en.target);
-        requestAnimationFrame(() => en.target.classList.add('rv-in'));
+        en.target.classList.add('rv-in');
       });
     }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
     root.querySelectorAll('[data-reveal]').forEach(el => {
@@ -454,6 +454,7 @@ class Component extends DCLogic {
     });
   }
   onScroll = () => {
+    if (this.io) document.querySelectorAll('.rv:not(.rv-in)').forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight * 0.92) el.classList.add('rv-in'); });
     let cur = 0;
     PAGES.forEach((p, i) => { const el = document.getElementById(p); if (el && el.getBoundingClientRect().top < 140) cur = i; });
     if (cur !== this.state.page) this.setState({ page: cur });
